@@ -1,0 +1,9 @@
+{
+    "autoload": {
+        "psr-4": {
+            "Routes\\": "Routes/",
+            "Libs\\": "Libs/",
+            "Model\\": "Model/"
+        }
+    }
+}
