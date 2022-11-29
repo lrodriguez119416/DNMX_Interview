@@ -7,6 +7,30 @@
                 Test header
             </div>
             <div class="card-body">
+            <div>
+                <form id="testform" action="">
+                        <div class="form-group">
+                        <label for="name">Name</label>
+                            <input id="name" type="text" class="form-control" placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastname">Last name</label>
+                            <input id="lastname" type="text" class="form-control" placeholder="Last Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastname">Age</label>
+                            <input id="age" type="text" class="form-control" placeholder="Age">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Rol</label>
+                            <select class="form-control" name="rol" id="rol">
+                                <option value="">Choose a option</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-success">Save</button>
+                    </form>
+                </div>
+                <br>
                 <div class="row">
                     <div>
                         <br>
@@ -38,6 +62,16 @@
 </div>
 <script>
     $(function(){
+        $("#testform").on('submit', function(e){
+            var $name = $("#name");
+            if($name.val()== ""){
+                alert('You must complete the name field');
+                $name.focus();
+                return false;
+            }
+            alert('Form complete');
+            e.preventDefault();
+        });
         $.ajax({
             url: "inicio/getRoles",
             type: "POST",

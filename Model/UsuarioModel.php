@@ -16,8 +16,9 @@ class UsuarioModel extends Model {
     }
 
     public function getRoles(){
-        $sql = "Select * from roles";
-        return $this->conn->query($sql)->fetchAll();        
+        $sql = "";
+        $response = [];
+        return $response;        
     }
 }
 
